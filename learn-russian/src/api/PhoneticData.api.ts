@@ -1,6 +1,6 @@
 import { callDataApi } from './CustomFetch';
 
-export default class ActorApi {
+export default class PhoneticApi {
 
   static getPhoneticData(word: string): Promise<any> {
     let dir = `/api/phoneticData/data`

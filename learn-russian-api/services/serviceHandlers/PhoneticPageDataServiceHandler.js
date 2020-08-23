@@ -19,8 +19,8 @@ module.exports = (function() {
   };
   const setupHandler = (body, resolve, word) => {
     console.log(`Word ${word}`)
-    console.log('body')
-    console.log(body)
+    // console.log('body')
+    // console.log(body)
     if (pageBodyCache[word]) {
       console.log(`
       REQUEST REPONSE IN CACHE 
@@ -47,10 +47,16 @@ module.exports = (function() {
   // sys.puts(sys.inspect(handler.dom, false, null));
 
   const checkForChildren = bodyItem => {
+    // console.log(`
+    // ITEM
+
+    // ${JSON.stringify(bodyItem)}
+    
+    // `)
     // conditionallyLogItem(bodyItem);
-    checkForImgAttributes(bodyItem);
-    checkForDivData(bodyItem);
-    checkForHeadings(bodyItem);
+    // checkForImgAttributes(bodyItem);
+    // checkForDivData(bodyItem);
+    // checkForHeadings(bodyItem);
     checkForParagraphs(bodyItem);
     // checkForSpans(bodyItem);
     if (bodyItem.children) {
@@ -137,17 +143,17 @@ module.exports = (function() {
     console.log(dom)
     dom.forEach(item => {
       //TODO Find the necessary phonetic data
-      // if (item.children) {
-      //   //get open, head, body, close
-      //   item.children.forEach(item => {
-      //     if (item.children && item.name === "body") {
-      //       //recursively iterate over body to get all links with images
-      //       item.children.forEach(bodyItem => {
-      //         checkForChildren(bodyItem);
-      //       });
-      //     }
-      //   });
-      // }
+      if (item.children) {
+        //get open, head, body, close
+        item.children.forEach(item => {
+          if (item.children && item.name === "body") {
+            //recursively iterate over body to get all links with images
+            item.children.forEach(bodyItem => {
+              checkForChildren(bodyItem);
+            });
+          }
+        });
+      }
     });
   }
   return {

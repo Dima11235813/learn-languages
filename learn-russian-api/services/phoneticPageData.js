@@ -1,7 +1,7 @@
 var request = require('request')
 var PhoneticPageDataServiceHandler = require('./serviceHandlers/PhoneticPageDataServiceHandler')
 
-function fetchPhoneticData(url) {
+function fetchPhoneticData(word) {
   return new Promise((resolve, reject) => {
     request(word, (err, res, body) => {
       if (!err && res.statusCode == 200) {
