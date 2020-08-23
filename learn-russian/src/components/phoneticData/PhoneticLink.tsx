@@ -13,16 +13,19 @@ export const PhoneticLink = (props: IPhoneticLinkProps) => {
               Phonetic
               
               `}</div>
-      {props.wordSections.map((wordSection: string, index: number) => {
-        return (
-          <React.Fragment>
-            <a
-              key={`${index}-link`}
-              href={get1UrlPhonetic(wordSection)}
-            >{` ${wordSection}  `}</a>
-          </React.Fragment>
-        );
-      })}
+      <div style={labelStyle}>
+        {props.wordSections.map((wordSection: string, index: number) => {
+          return (
+            <React.Fragment>
+              <a
+                key={`${index}-link`}
+                href={get1UrlPhonetic(wordSection)}
+              >{` ${wordSection}  `}</a>
+              <span> {` `}</span>
+            </React.Fragment>
+          );
+        })}
+      </div>
     </div>
   );
 };

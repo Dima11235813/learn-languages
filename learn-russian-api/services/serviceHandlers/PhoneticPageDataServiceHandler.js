@@ -35,7 +35,7 @@ module.exports = (function() {
           console.log(`Pasing failure, error: ${error}`);
         } else {
           returnData(dom);
-          let responseObj = { ...data, ...analytics };
+          let responseObj = { data, analytics };
           pageBodyCache[word] = responseObj;
           resolve(responseObj);
         }
@@ -86,6 +86,11 @@ module.exports = (function() {
     }
   };
   const returnFirstChildsRaw = item => {
+    console.log(`
+    Setting paragraph
+
+    ${item.children[0].raw}
+    `)
     return item.children[0].raw;
   };
   const checkForParagraphs = item => {

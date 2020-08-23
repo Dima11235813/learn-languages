@@ -13,13 +13,16 @@ export const MorphoLink = (props: IPhoneticLinkProps) => {
                 Morpho
                 
                 `}</div>
-      {props.wordSections.map((wordSection: string, index: number) => {
-        return (
-          <React.Fragment>
-            <a href={get1UrlMorpho(wordSection)}>{` ${wordSection}  `}</a>
-          </React.Fragment>
-        );
-      })}
+      <div style={labelStyle}>
+        {props.wordSections.map((wordSection: string, index: number) => {
+          return (
+            <React.Fragment>
+              <a href={get1UrlMorpho(wordSection)}>{wordSection}</a>
+              <span> {` `}</span>
+            </React.Fragment>
+          );
+        })}
+      </div>
     </div>
   );
 };

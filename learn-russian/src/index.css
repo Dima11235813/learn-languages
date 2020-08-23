@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.lesson-word-item-container{
+  height: 10vh;
+}
+.main-word-text:hover{
+  cursor: pointer;
+  font-size: 2.5rem;
+  transition: font-size .5s ease;
+}

@@ -34,30 +34,33 @@ export const MainWordDisplay = (props: IMainWordDisplayProps) => {
       <div style={wordLessonItemStyleMain}>
         {props.wordSections.map((wordSection: string, index: number) => {
           return (
-            <span
+            <div
               key={`${index}-${wordSection}`}
               className="lesson-word-item-container"
             >
-              <span onClick={() => handleWordClick(wordSection)}>
+              <span
+                className="main-word-text"
+                onClick={() => handleWordClick(wordSection)}
+              >
                 {`   ${wordSection}   `}
               </span>
-            </span>
+            </div>
           );
         })}
+        <div>
+          {wordData.data.paragraphs.map((paragraphText: string) => (
+            <PhoneticParagraph paragraphText={paragraphText} />
+          ))}
+        </div>
       </div>
-      <div>
+      {/* <div>
           <span>
           DEBUG WORD DATA SECTION
           </span>
           <span>
           {JSON.stringify(wordData)}
           </span>
-      </div>
-      <div>
-        {wordData.data.paragraphs.map((paragraphText: string) => (
-          <PhoneticParagraph paragraphText={paragraphText} />
-        ))}
-      </div>
+      </div> */}
     </React.Fragment>
   );
 };

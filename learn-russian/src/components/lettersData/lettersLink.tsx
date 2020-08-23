@@ -13,13 +13,16 @@ export const LettersLink = (props: IPhoneticLinkProps) => {
               Letters
               
               `}</div>
-      {props.wordSections.map((wordSection: string, index: number) => {
-        return (
-          <React.Fragment>
-            <a href={getUrlLetters(wordSection)}>{` ${wordSection}  `}</a>
-          </React.Fragment>
-        );
-      })}
+      <div style={labelStyle}>
+        {props.wordSections.map((wordSection: string, index: number) => {
+          return (
+            <React.Fragment>
+              <a href={getUrlLetters(wordSection)}>{` ${wordSection}  `}</a>
+              <span> {` `}</span>
+            </React.Fragment>
+          );
+        })}
+      </div>
     </div>
   );
 };
