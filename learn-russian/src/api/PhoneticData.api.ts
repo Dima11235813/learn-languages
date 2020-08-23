@@ -1,8 +1,9 @@
 import { callDataApi } from './CustomFetch';
+import { IPhoneticPageData } from '../models/phoneticDataSource';
 
 export default class PhoneticApi {
 
-  static getPhoneticData(word: string): Promise<any> {
+  static getPhoneticData(word: string): Promise<IPhoneticPageData> {
     let dir = `/api/phoneticData/data`
     return callDataApi<any>(dir, {
       method: 'POST',
