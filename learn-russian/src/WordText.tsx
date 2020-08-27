@@ -6,6 +6,7 @@ import { PhoneticLink } from "./components/phoneticData/PhoneticLink";
 import { MorphoLink } from "./components/morphoData/MorphoLink";
 import { LettersLink } from "./components/lettersData/lettersLink";
 import { MainWordDisplay } from "./components/mainWordData/mainWordDisplay";
+import { GoogleTranslate } from "./components/gogleTranslate/GoogleTranslate";
 
 export interface IWordTextProps {
   wordOrWords: IWord;
@@ -32,6 +33,7 @@ export const WordText = (props: IWordTextProps): JSX.Element => {
     <div className="word-card">
       <MainWordDisplay wordSections={wordSections} />
       <div style={linksWrapperStyle}>
+        <GoogleTranslate wordSections={wordSections} />
         <PhoneticLink wordSections={wordSections} />
         <MorphoLink wordSections={wordSections} />
         <LettersLink wordSections={wordSections} />
