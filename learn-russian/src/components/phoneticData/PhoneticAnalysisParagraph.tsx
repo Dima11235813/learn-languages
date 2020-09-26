@@ -7,9 +7,9 @@ export interface IPhoneticAnalysisParagraphProps {
 //https://stackoverflow.com/questions/7394748/whats-the-right-way-to-decode-a-string-that-has-special-html-entities-in-it
 // encode(decode) html text into html entity
 var decodeHtmlEntity = function(str:string) {
-  console.log(`input to decode is ${str}`)
+  // console.log(`input to decode is ${str}`)
   return str.replace(/&#(\d+);/g, function(match, dec) {
-    console.log(`output to decode is ${dec}`)
+    // console.log(`output to decode is ${dec}`)
     return String.fromCharCode(dec)
   });
 };
@@ -22,6 +22,9 @@ let arrayOfUnwantedParagraphCharSeries = [
   "&raquo;",
   "&#769;",
   "&nbsp;",
+  "В слове",
+  ";",
+  ":"
 ]
 var removeUnwantedCharSeries = (str:string) => {
   let resultString = str

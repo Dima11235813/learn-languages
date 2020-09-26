@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import {
-  wordLessonItemStyle,
-  labelStyle,
-  wordLessonItemStyleMain,
-} from "../../styles/phoneticStyle";
-import { get1UrlPhonetic } from "../../browserUtilities/links";
+import { wordLessonItemContainer, wordLessonItemStyleMain } from "../../styles/phoneticStyle";
 import PhoneticApi from "../../api/PhoneticData.api";
 import {
   IPhoneticPageData,
@@ -21,11 +16,11 @@ export const MainWordDisplay = (props: IMainWordDisplayProps) => {
     new PhoneticPageData()
   );
   const handleWordClick = (text: string) => {
-    console.log(
-      `Trigger client side search for phonetic data for word ${text}`
-    );
+    // console.log(
+    //   `Trigger client side search for phonetic data for word ${text}`
+    // );
     PhoneticApi.getPhoneticData(text).then((result) => {
-      console.log(result);
+      // console.log(result);
       setWordData(result);
     });
   };
@@ -39,6 +34,7 @@ export const MainWordDisplay = (props: IMainWordDisplayProps) => {
               className="lesson-word-item-container"
             >
               <span
+                style={wordLessonItemContainer}
                 className="main-word-text"
                 onClick={() => handleWordClick(wordSection)}
               >
@@ -47,11 +43,11 @@ export const MainWordDisplay = (props: IMainWordDisplayProps) => {
             </div>
           );
         })}
-        <div>
-          {wordData.data.paragraphs.map((paragraphText: string) => (
-            <PhoneticParagraph paragraphText={paragraphText} />
-          ))}
-        </div>
+      </div>
+      <div>
+        {wordData.data.paragraphs.map((paragraphText: string) => (
+          <PhoneticParagraph paragraphText={paragraphText} />
+        ))}
       </div>
       {/* <div>
           <span>
