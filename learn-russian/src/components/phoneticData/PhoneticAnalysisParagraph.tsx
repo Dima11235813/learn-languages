@@ -24,7 +24,9 @@ let arrayOfUnwantedParagraphCharSeries = [
   "&nbsp;",
   "В слове",
   ";",
-  ":"
+  ":",
+  "слогов",
+  "Рекомендованные переносы"
 ]
 var removeUnwantedCharSeries = (str:string) => {
   let resultString = str
