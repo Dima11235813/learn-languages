@@ -9,7 +9,7 @@ require.extensions['.txt'] = function (module, filename) {
 
 var lesson1 = require(fileName);
 
-console.log(typeof lesson1); // string
+// console.log(typeof lesson1); // string
 // Otherwise, you can mix fs.readFile with require.resolve:
 
 module.exposts = function getLessonsJson(callback) {

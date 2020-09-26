@@ -16,9 +16,9 @@ router.post("/data", async (req, res) => {
   let wordEncoded = encodeURI(word);
   let url = get1UrlPhonetic(wordEncoded);
   //TODO Extract into service mapper to remove url concern
-  console.log(`Getting
-    url
-    ${url}`);
+  // console.log(`Getting
+  //   url
+  //   ${url}`);
   // console.log(`Body request`)
   // console.log(req)
   let data = await fetchPhoneticData(url);

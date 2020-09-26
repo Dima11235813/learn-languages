@@ -22,17 +22,17 @@ module.exports = (function() {
     // console.log('body')
     // console.log(body)
     if (pageBodyCache[word]) {
-      console.log(`
-      REQUEST REPONSE IN CACHE 
-      word: ${word}
-      `);
-      console.log(pageBodyCache[word]);
+      // console.log(`
+      // REQUEST REPONSE IN CACHE 
+      // word: ${word}
+      // `);
+      // console.log(pageBodyCache[word]);
       resolve(pageBodyCache[word]);
     } else {
       resetData();
       var handler = new htmlparser.DefaultHandler((error, dom) => {
         if (error) {
-          console.log(`Pasing failure, error: ${error}`);
+          // console.log(`Pasing failure, error: ${error}`);
         } else {
           returnData(dom);
           let responseObj = { data, analytics };
@@ -86,11 +86,11 @@ module.exports = (function() {
     }
   };
   const returnFirstChildsRaw = item => {
-    console.log(`
-    Setting paragraph
+    // console.log(`
+    // Setting paragraph
 
-    ${item.children[0].raw}
-    `)
+    // ${item.children[0].raw}
+    // `)
     return item.children[0].raw;
   };
   const checkForParagraphs = item => {
@@ -141,11 +141,11 @@ module.exports = (function() {
   ];
   const conditionallyLogItem = item => {
     if (arrayOfItemNamesWeSave.indexOf(item.name) > -1) {
-      console.log(item);
+      // console.log(item);
     }
   };
   function returnData(dom) {
-    console.log(dom)
+    // console.log(dom)
     dom.forEach(item => {
       //TODO Find the necessary phonetic data
       if (item.children) {
